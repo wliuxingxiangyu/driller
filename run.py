@@ -74,7 +74,7 @@ def main(argv):
     l.setLevel("INFO")
 
     if len(argv) < 2:
-        print "usage: %s <binary_dir>" % argv[0]
+        print("usage: %s <binary_dir>" % argv[0])
         return 1
 
     binary_dir = sys.argv[1]

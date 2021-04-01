@@ -4,8 +4,8 @@ Driller is an implementation of the [driller paper](https://www.cs.ucsb.edu/~vig
 
 ### The "Stuck" heuristic
 
-Driller's symbolic execution component is invoked when AFL is 'stuck'. 
-In this implementation, AFL's progress is determined by its 'pending\_favs' attribute which can found in the fuzzer\_stats file. 
+Driller's symbolic execution component is invoked when AFL is 'stuck'.
+In this implementation, AFL's progress is determined by its 'pending\_favs' attribute which can found in the fuzzer\_stats file.
 When this attribute reaches 0, Driller is invoked. Other heuristics could also be used, and it's infact likely that better heuristics exist.
 
 ### Use in the Cyber Grand Challenge
@@ -24,7 +24,32 @@ The code currently supports three modes of operation:
 Driller was built and developed for DECREE binaries.
 While some support for other formats should work out-of-the-box, expect `TracerMisfollowError`s to occur when unsupported or incorrectly implemented simprocedures are hit.
 
-### Example
+# Install:
+
+## cd to parent dir
+
+cd ../
+
+python3.7 -m venv hz_dirller_venv
+
+source hz_dirller_venv/bin/activate
+
+`so hz_dirller_venv is python3.7 env.`
+
+## cd to dirller dir
+
+cd dirller
+
+python setup.py install
+
+pip install -r requirements.txt
+
+`git下载依赖项失败。 fatal: unable to access 'https://github.com/angr/tracer.git/': gnutls_handshake() failed: The TLS connection was non-properly terminated.`
+
+`将 https -> http: git+https://github.com/shellphish/fuzzer.git#egg=fuzzer 改成 git+http://github.com/shellphish/fuzzer.git#egg=fuzzer `
+
+
+# Example
 
 Here is an example of using driller to find new testcases based off the trace of a single testcase.
 
