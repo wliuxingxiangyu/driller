@@ -9,16 +9,18 @@ import driller
 
 l = logging.getLogger("driller.driller")
 
-
+# https://github.com/wliuxingxiangyu/binaries
 bin_location = str(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../binaries'))
-
+# bin_location = str(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../hz_bins'))
+# bin_location = str(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../cgc-bins'))
 
 def test_drilling_cgc():
     """
     Test drilling on the cgc binary, palindrome.
     """
-
     binary = "tests/cgc/sc1_0b32aa01_01"
+    # binary = "hi"
+    # binary = "all_patched/KPRCA_00110_patched"
 
     # fuzzbitmap says every transition is worth satisfying.
     d = driller.Driller(os.path.join(bin_location, binary), b"AAAA", b"\xff"*65535, "whatever~")
