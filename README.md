@@ -109,6 +109,14 @@ sudo apt-get install libglib2.0-dev
 
 ```
 
+```
+angr.exploration_techniques.tracer.TracerDesyncError: Oops! angr did not follow the trace 
+ans ：
+
+I made a mistake! my binary was a linux compilation from CGC source code. I used from a CGC binary (that compile on DECREE) and my problem was solved.
+https://github.com/angr/angr/issues/1609#issuecomment-782581545
+```
+
 # Example
 
 Here is an example of using driller to find new testcases based off the trace of a single testcase.
